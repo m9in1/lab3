@@ -6,6 +6,22 @@
 
 
 
+
+
+
+
+char filename[] = "D:/MIET/OOP/lab3/datebase.csv";
+
+
+
+
+
+
+
+
+
+
+
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
@@ -25,7 +41,7 @@ MainWindow::~MainWindow()
 }
 
 void MainWindow::searchLes(){
-    csvreader csv_r("D:/MIET/OOP/lab3/datebase.csv");
+    csvreader csv_r(filename);
 
     if(csv_r.is_open()){
 
@@ -52,7 +68,7 @@ l.type_of_les = ui->input_type->text();
 
 
 //ui->output->append(l.lesname+", "+QString::number(l.lesaud)+", "+l.type_of_les+";");
-csvwriter csv_w("D:/MIET/OOP/lab3/datebase.csv");
+csvwriter csv_w(filename);
 csv_w.write(l);
 }
 
